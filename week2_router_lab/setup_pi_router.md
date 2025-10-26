@@ -24,7 +24,7 @@ Raspberry Pi OS didn’t include a native driver, so I tried multiple community 
 Most compiled successfully but failed to load the device; no new wlan1 interface appeared after reboot.
 Because of kernel and chipset mismatches, the adapter was detected over USB but couldn’t operate as a network card.
 
-After several attempts (and some very long reboots 😅), I decided to postpone wireless routing until I could find a fully supported adapter.
+After several attempts (and some very long reboots ), I decided to postpone wireless routing until I could find a fully supported adapter.
 
 #4 – Switch to Ethernet for Stability
 
