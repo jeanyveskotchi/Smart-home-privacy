@@ -8,7 +8,7 @@ The built-in adapter would broadcast my own SSID so my phone could connect throu
 
 This setup would let me route and inspect all phone traffic locally.
 
-#3 – Challenge: Driver Support
+Challenge: Driver Support
 
 The ASUS adapter uses a Realtek RTL8832AU chipset.
 Raspberry Pi OS didn’t include a native driver, so I tried multiple community drivers (8821au-20210708, rtl8852au, etc.).
