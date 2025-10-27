@@ -11,6 +11,12 @@ Observe and compare network traffic visibility with and without VPN encryption u
   - `week2_capture_vpn.pcap` — VPN active on mobile device
 
 ## Findings
+### DNS Query Results
+**Without VPN**
+![DNS Visible](Screenshots/capture.png)
+
+**With VPN**
+![DNS Hidden](Screenshots/no_DNS.png)
 
 ### Without VPN
 - DNS queries and TLS handshakes visible.
@@ -31,7 +37,16 @@ Observe and compare network traffic visibility with and without VPN encryption u
 | Visible IPs | Many | 1–2 (VPN) |
 | Readable metadata | Hostnames, SNI | Only IP + timestamps |
 
+### Wireshark Graphs
+**No VPN Traffic**
+![No VPN Traffic](Screenshots/graph_capture.png)
+
+**VPN Traffic**
+![VPN Traffic](Screenshots/graph_vpn_capture.png)
+
 ## Conclusion
 When the VPN is enabled, all communication is tunneled through an encrypted channel.  
 The Raspberry Pi access point can still measure timing and packet counts but loses visibility into sites visited, DNS lookups, and specific content.  
 This demonstrates that VPNs effectively protect user activity from local network observers.
+
+
