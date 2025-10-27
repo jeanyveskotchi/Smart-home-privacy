@@ -11,3 +11,9 @@ These results confirm that a VPN:
 - Limits what can be inferred to volume and timing of packets only.  
 
 Overall, this validates the VPN’s role in maintaining confidentiality of user traffic in a smart-home or shared-Wi-Fi context.
+
+## Visualization: VPN vs No VPN Traffic
+
+The chart below summarizes visibility differences between regular traffic and VPN-protected traffic.
+
+![VPN Visibility Comparison](Screenshots/comparaison-chart.png)
