@@ -27,7 +27,7 @@ Because of kernel and chipset mismatches, the adapter was detected over USB but 
 
 After several attempts (and some very long reboots ), I decided to postpone wireless routing until I could find a fully supported adapter.
 
-# 4 – Switch to Ethernet for Stability
+# 4 – Attempt #2: Switch to Ethernet for Stability
 
 To keep progressing, I connected the Pi directly to my apartment’s wall LAN port with a long Cat 6 Ethernet cable.
 This solved two problems at once:
