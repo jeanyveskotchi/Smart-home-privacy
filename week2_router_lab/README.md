@@ -39,7 +39,7 @@ Observe and compare network traffic visibility with and without VPN encryption u
 
 ### Wireshark Graphs
 **No VPN Traffic**
-![No VPN Traffic](Screenshots/graph_capture.png)
+![No VPN Traffic](Screenshots/graph_capture1.png)
 
 **VPN Traffic**
 ![VPN Traffic](Screenshots/graph_vpn_capture.png)
