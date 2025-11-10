@@ -12,7 +12,7 @@ That’s about **9× more packets** and **14× more data** when the camera strea
 ## 2. Comparing Graphs — Idle vs Streaming
 
 ### Idle Graph
-![Idle Graph](Screenshots/wyze_idle_graph.png)
+![Screenshots/wyze graph](Screenshots/wyze_idle_graph.png)
 
 The graph shows occasional, small spikes — short bursts of 50–150 packets/second followed by long quiet periods.
 
