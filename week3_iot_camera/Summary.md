@@ -27,7 +27,7 @@ Observe and compare the network behavior of a Wyze Cam v4 when **idle** (powered
 | **Idle** | 3 min | **1 475 packets** | **559 KB** | Camera connected to cloud, periodic DNS & keep-alive |
 | **Streaming** | 3 min | **12 631 packets** | **8 108 KB** | Continuous encrypted TLS and UDP streams for video feed |
 
-📈 **Observation:**  
+**Observation:**  
 Streaming generated ≈ 9× more packets and ≈ 14× more data — a clear distinction between passive connectivity and active data transfer.
 
 ---
