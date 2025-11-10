@@ -1,6 +1,6 @@
 ## 1. General Behavior Summary
 
-You captured two sessions:
+I captured two sessions:
 
 - **Idle:** 1,475 packets (≈559 KB)  
 - **Streaming:** 12,631 packets (≈8,108 KB)
@@ -28,7 +28,7 @@ This means the camera is mostly silent, sending only:
 ###  Streaming Graph
 ![Streaming Graph](Screenshots/wyze_stream_graph.png)
 
-You see massive spikes (hundreds of packets/sec) and a steady wave pattern.
+We see massive spikes (hundreds of packets/sec) and a steady wave pattern.
 
 This wave-like rhythm is typical of video streaming traffic:
 - Each “wave” represents continuous frames of compressed video being uploaded.
@@ -43,7 +43,7 @@ Even though Wyze encrypts data (TLS/UDP), the amount and timing clearly expose w
 ![Idle DNS](Screenshots/wyze_dns.png)
 ![Streaming DNS](Screenshots/wyze_stream_dns.png)
 
-Your DNS captures show repeated lookups like:
+The DNS captures show repeated lookups like:
 -api.wyzecam.com
 -core-cloud-gateway.wyzecam.com
 -c-t-usw2.s3.us-west-2.amazonaws.com
@@ -54,10 +54,10 @@ Your DNS captures show repeated lookups like:
   - It’s ensuring it can reach the control servers.
   - During streaming, it negotiates multiple relay endpoints (for WebRTC / STUN / TURN connections).
 
-You also see:
+We also see:
 > ICMP Destination unreachable (Port unreachable)
 
-That’s normal — Wyze tries multiple relay endpoints (UDP ports) for NAT traversal; some fail, so you see “unreachable” messages.
+That’s normal — Wyze tries multiple relay endpoints (UDP ports) for NAT traversal; some fail, so we see “unreachable” messages.
 
 ---
 
@@ -67,7 +67,7 @@ That’s normal — Wyze tries multiple relay endpoints (UDP ports) for NAT trav
 **Filter used:**  
 `tcp.port == 443 && ip.addr == 10.42.0.37`
 
-You see mostly:
+We see mostly:
 - `TLSv1.2 Application Data`
 - `TCP Keep-Alive`
 - `Server Hello`, `Change Cipher Spec`
@@ -90,16 +90,16 @@ Even though encrypted, the packet size and frequency clearly differ between idle
 ![MAC-Level View](Screenshots/wyze-stream.png)
 
 This view confirms:
-- Your Wyze Cam’s MAC address (`80:48:2C:3A:66:F0`) communicates primarily with the Pi (`10.42.0.1`) and cloud servers on AWS IPs.
-- You also saw packets to/from:
-  - Apple devices — likely your phone controlling the camera.
+- My Wyze Cam’s MAC address (`80:48:2C:3A:66:F0`) communicates primarily with the Pi (`10.42.0.1`) and cloud servers on AWS IPs.
+- I also saw packets to/from:
+  - Apple devices — likely my phone controlling the camera.
   - UDP ports `48259–61754` — dynamic session ports for the video stream.
 
-**Why:** When you open the Wyze app, your phone becomes a control client — it sends a command to Wyze’s cloud, which tells your camera to start streaming, then the stream travels either:
+**Why:** When I open the Wyze app, my phone becomes a control client — it sends a command to Wyze’s cloud, which tells my camera to start streaming, then the stream travels either:
 1. Directly between the phone and camera (LAN mode), or  
 2. Through Wyze’s AWS relay (cloud mode).
 
-Your traffic pattern strongly suggests **cloud relay mode** (video sent to AWS, not local).
+The traffic pattern strongly suggests **cloud relay mode** (video sent to AWS, not local).
 
 ---
 
