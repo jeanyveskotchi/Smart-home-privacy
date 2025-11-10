@@ -2,14 +2,14 @@
 
 For the first week I installed the Raspberry pi 5 (8GB RAM). The Raspberry Pi 5 is a small, single-board computer that runs a full Linux-based operating system (Raspberry Pi OS) and can perform many of the same tasks as a desktop computer like coding, data collection, machine learning, and networking.
 
-![Raspberry Pi 5](Pictures/Screenshot 2025-11-09 202130.png).
+![Raspberry Pi 5](Pictures/pi5).
 
 ---
 
 I  mounted the pc and plugged it to a monitor, I added a mouse and a keyboard
 Performed a full system update:
 
-![Pi 5 installation](Pictures/Screenshot 2025-11-09 202130.png).
+![Pi 5 installation](Pictures/installation).
 
 ---
 
@@ -22,7 +22,7 @@ Then I Installed essential packages for networking and scripting:
 Ran a live packet capture:
  sudo tcpdump -i wlan0 -c 50
 
-![tcpdump](Pictures/Screenshot 2025-11-09 202152.png).
+![tcpdump](Pictures/tcpdump).
 
 ---
 **Purpose:**
