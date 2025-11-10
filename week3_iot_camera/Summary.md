@@ -1,5 +1,5 @@
 # Week 3 – IoT Camera Traffic Analysis (Wyze Cam v4)
-
+![Wyze Cam v4)](Screenshots/wyze-cam-v4-wyze-labs-inc-5186547)
 ---
 
 ## 1️⃣ Objective
