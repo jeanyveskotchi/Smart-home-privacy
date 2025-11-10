@@ -112,3 +112,77 @@ The traffic pattern strongly suggests **cloud relay mode** (video sent to AWS, n
 | DNS Queries  | Few      | Many           | More relay negotiations during streaming  |
 | Graph Shape  | Sparse   | Dense waveform | Represents video frames transmitted       |
 | Protocols    | TCP/TLS  | TCP + UDP + TLS| UDP added for real-time video             |
+
+## 6. Understanding the TCP Error Graph (Wireshark Visualization)
+
+![TCP Error Zoomed View](Screenshots/graph_error.png)
+
+This zoomed-in I/O Graph provides a deeper look at the camera’s live stream behavior and reliability.
+
+### 7. What the Red “TCP Error” Bars Mean
+
+In Wireshark, the red bars (from the display filter `tcp.analysis.flags`) represent **TCP reliability events** — moments when the protocol had to correct packet delivery issues.  
+These include:
+
+| Type of TCP Event | Meaning | Why It Happens |
+|--------------------|----------|----------------|
+| **Retransmission** | A packet was sent again because the first one wasn’t acknowledged | Normal on Wi-Fi; occasional packet loss |
+| **Dup ACK** | Receiver acknowledged the same packet twice | Sender retransmitted before the first ACK arrived |
+| **Out-of-Order** | Packets arrived in the wrong order | Common when multiple video frames are transmitted simultaneously |
+| **Spurious Retransmission** | A packet was resent unnecessarily | Usually due to jitter or network delay |
+
+**In short:** Red bars don’t mean failure — they show the **self-healing mechanism** of TCP, ensuring that even lost or delayed frames are resent so the stream stays stable.
+
+---
+
+###  What the Graph Shows
+
+- The **early tall red bars** indicate connection setup and initial handshakes between the Wyze Cam and Wyze’s cloud servers. This is when the camera establishes its encrypted TLS session.
+- The **middle section**, with shorter, rhythmic red spikes, represents **steady streaming** where occasional packets are lost and resent.
+- The **final large red bar** marks the **end of the session** — connection closure, TLS teardown, or stream stop.
+
+Together, these red segments visualize **how actively the TCP protocol is working** to maintain smooth video transmission over Wi-Fi.
+
+---
+
+###  The Brown/Black Line (`tcp.port == 443`)
+
+This line shows all encrypted traffic sent to Wyze’s cloud servers over HTTPS (port 443).  
+You can think of it as the **actual video upload rate** — the more consistent the line, the more stable the stream.
+
+When the brown line spikes and red bars appear together:
+- It means the stream is under load (high bitrate video).
+- More retransmissions occur because larger data bursts increase packet loss risk.
+
+When the line flattens and red bars disappear:
+- The stream is idle or stable — no missing packets to resend.
+
+---
+
+### Interpreting the Graph
+
+| Section of Graph | Behavior | Interpretation |
+|------------------|-----------|----------------|
+| Left Side | High red bars | Stream initialization, TLS handshakes |
+| Middle | Wavy brown line + small red spikes | Stable streaming with minor retransmissions |
+| Right Side | Tall red bar | Connection teardown or end of stream |
+| Few or no red bars | Clean connection | Low packet loss, stable signal |
+
+---
+
+### Why This Matters
+
+Even though Wyze encrypts all data (TLSv1.2 on port 443), **encryption doesn’t hide metadata** like timing, packet size, or retransmission rate.  
+By analyzing this TCP error pattern, we can infer:
+
+- When the stream starts and stops  
+- How much network correction occurs  
+- The reliability of the Wi-Fi link between the Pi and the Wyze Cam  
+- Whether the stream was cloud-relayed (TCP-heavy) or peer-to-peer (UDP-heavy)
+
+This confirms that during streaming, **the Wyze Cam relies heavily on TCP retransmission** to guarantee complete video delivery to its cloud relay servers — even at the cost of speed.
+
+---
+
+**Summary:**
+The red “TCP Error” bars in the I/O Graph don’t represent broken communication but rather TCP’s built-in reliability in action. They visualize how the Wyze Cam continuously corrects small Wi-Fi losses while maintaining a steady encrypted stream to the cloud.
