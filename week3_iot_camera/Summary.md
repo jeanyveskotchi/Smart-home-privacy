@@ -2,12 +2,12 @@
 ![Wyze Cam v4](Screenshots/wyze-cam-v4-wyze-labs-inc-5186547.webp)
 
 
-## 1️⃣ Objective
+## 1. Objective
 Observe and compare the network behavior of a Wyze Cam v4 when **idle** (powered on but not streaming) versus when **actively streaming video**, to analyze traffic volume, frequency, and connection patterns.
 
 ---
 
-## 2️⃣ Experimental Setup
+## 2. Experimental Setup
 
 | Component | Description |
 |------------|-------------|
@@ -20,7 +20,7 @@ Observe and compare the network behavior of a Wyze Cam v4 when **idle** (powered
 
 ---
 
-## 3️⃣ Captured Data Overview
+## 3. Captured Data Overview
 
 | State | Duration | Packets Captured | File Size | Notes |
 |:------|:----------|:----------------|:-----------|:------|
@@ -32,7 +32,7 @@ Streaming generated ≈ 9× more packets and ≈ 14× more data — a clear dist
 
 ---
 
-## 4️⃣ Wireshark Analysis
+## 4. Wireshark Analysis
 
 ### A. Traffic Type Breakdown
 - **DNS Queries:** `api.wyzecam.com`, `core-cloud-gateway.wyzecam.com`
