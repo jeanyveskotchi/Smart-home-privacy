@@ -1,4 +1,4 @@
-# 1. General Behavior Summary
+## 1. General Behavior Summary
 
 You captured two sessions:
 
@@ -8,7 +8,7 @@ Streaming: 12,631 packets (≈8,108 KB)
 
 That’s about 9× more packets and 14× more data when the camera streams — a strong sign that the device moves from lightweight “control signaling” to heavy encrypted video transfer.
 
-# 2. Comparing Graphs — Idle vs Streaming
+## 2. Comparing Graphs — Idle vs Streaming
  Idle Graph (wyze_idle_graph.png)
 
 The graph shows occasional, small spikes — short bursts of 50–150 packets/second followed by long quiet periods.
@@ -112,10 +112,12 @@ Through Wyze’s AWS relay (cloud mode).
 
 Your traffic pattern strongly suggests cloud relay mode (video sent to AWS, not local).
 
-# 6. Visual Comparison Summary
-Metric	Idle	Streaming	Explanation
-Packets	~1.5K	~12.6K	~9× increase due to continuous streaming
-File Size	559 KB	8.1 MB	14× larger video payload
-DNS Queries	Few	Many	More endpoints for video negotiation
-Graph Shape	Sparse, random spikes	Dense waves, periodic bursts	Continuous data flow of video frames
-Protocols	Mostly TCP/TLS	TCP + UDP + TLS	UDP added for real-time video
+## Visual Comparison Summary
+
+| Metric       | Idle     | Streaming      | Explanation                               |
+|--------------|----------|----------------|-------------------------------------------|
+| Packets      | ~1.5 K   | ~12.6 K        | ≈ 9× increase due to continuous streaming |
+| File Size    | 559 KB   | 8.1 MB         | ≈ 14× increase in payload                 |
+| DNS Queries  | Few      | Many           | More relay negotiations during streaming  |
+| Graph Shape  | Sparse   | Dense waveform | Represents video frames transmitted       |
+| Protocols    | TCP/TLS  | TCP + UDP + TLS| UDP added for real-time video             |
