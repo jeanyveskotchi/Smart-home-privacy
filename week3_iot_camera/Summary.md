@@ -1,6 +1,6 @@
 # Week 3 – IoT Camera Traffic Analysis (Wyze Cam v4)
 ![Wyze Cam v4](week3_iot_camera/Screenshots/wyze-cam-v4-wyze-labs-inc-5186547.webp)
----
+
 
 ## 1️⃣ Objective
 Observe and compare the network behavior of a Wyze Cam v4 when **idle** (powered on but not streaming) versus when **actively streaming video**, to analyze traffic volume, frequency, and connection patterns.
