@@ -12,7 +12,7 @@ That’s about **9× more packets** and **14× more data** when the camera strea
 ## 2. Comparing Graphs — Idle vs Streaming
 
 ### Idle Graph
-![Idle Graph](screenshots/wyze_idle_graph.png)
+![Idle Graph](Screenshots/wyze_idle_graph.png)
 
 The graph shows occasional, small spikes — short bursts of 50–150 packets/second followed by long quiet periods.
 
@@ -26,7 +26,7 @@ This means the camera is mostly silent, sending only:
 ---
 
 ###  Streaming Graph
-![Streaming Graph](screenshots/wyze_stream_graph.png)
+![Streaming Graph](Screenshots/wyze_stream_graph.png)
 
 You see massive spikes (hundreds of packets/sec) and a steady wave pattern.
 
@@ -40,8 +40,8 @@ Even though Wyze encrypts data (TLS/UDP), the amount and timing clearly expose w
 ---
 
 ## 3. DNS Behavior
-![Idle DNS](screenshots/wyze_dns.png)
-![Streaming DNS](screenshots/wyze_stream_dns.png)
+![Idle DNS](Screenshots/wyze_dns.png)
+![Streaming DNS](Screenshots/wyze_stream_dns.png)
 
 Your DNS captures show repeated lookups like:
 -api.wyzecam.com
@@ -62,7 +62,7 @@ That’s normal — Wyze tries multiple relay endpoints (UDP ports) for NAT trav
 ---
 
 ## 4. Encrypted Traffic
-![HTTPS & TLS](screenshots/wyze_https&tls.png)
+![HTTPS & TLS](Screenshots/wyze_https&tls.png)
 
 **Filter used:**  
 `tcp.port == 443 && ip.addr == 10.42.0.37`
@@ -87,7 +87,7 @@ Even though encrypted, the packet size and frequency clearly differ between idle
 ---
 
 ## 5. MAC-Level Capture
-![MAC-Level View](screenshots/wyze-stream.png)
+![MAC-Level View](Screenshots/wyze-stream.png)
 
 This view confirms:
 - Your Wyze Cam’s MAC address (`80:48:2C:3A:66:F0`) communicates primarily with the Pi (`10.42.0.1`) and cloud servers on AWS IPs.
