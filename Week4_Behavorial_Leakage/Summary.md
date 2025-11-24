@@ -10,13 +10,4 @@ This week focused on analyzing timing metadata in encrypted Wyze Cam traffic to 
 - **Behavioral leakage is possible**: observers can infer when the camera is streaming, idle, waking, syncing, or performing maintenance tasks.
 - **Motion/sound detection should appear as clustered mini-bursts**, not single spikes. Future captures can confirm this.
 
-## Graphs
-### Streaming Pattern
-![Streaming](screenshots/week4g1.png)
-
-### Idle (Zoomed Out)
-![Idle Zoomed Out](screenshots/week4g2.png)
-
-### Idle (Zoomed In)
-![Idle Zoomed In](screenshots/week4g3.png)
 
