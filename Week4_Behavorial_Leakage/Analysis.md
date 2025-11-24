@@ -26,7 +26,7 @@ frame.time_delta_displayed measures time between packets → ideal for detecting
 ## 3. Visual Results & Interpretation
 ### 3.1 Streaming Timing Pattern
 
-![Streaming](screenshots/week4g1.png)
+![Streaming](screenshots/week4g2.png)
 
 What We See
 
@@ -51,7 +51,7 @@ Even when encrypted, streaming is easily identifiable from timing alone.
 
 ### 3.2 Idle Pattern (Zoomed Out)
 
-![Idle Zoomed](screenshots/week4g2.png)
+![Idle Zoomed](screenshots/week4g1.png)
 
 
 What We See
