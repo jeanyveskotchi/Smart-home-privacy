@@ -96,14 +96,14 @@ The camera still “wakes up” during idle → these background events create t
 ## 4. Behavioral Leakage Findings
 
 This is the core of Week 4 — what can an external observer infer?
+| Leakage Type |  Evidence | Meaning |
+|---|---|---|
+Streaming detection|	Wave pattern visible|	Observer knows when live video is being viewed
+Session refresh timing|	Large spike during stream	|Observer can estimate viewing session length
+Idle periodic tasks|	Isolated spikes|	Time-sync, cloud beacons, internal tasks
+Potential motion detection (future)|	Would show micro-burst clusters|	Can reveal activity inside the home
 
-Leakage Type	Evidence	Meaning
-Streaming detection	Wave pattern visible	Observer knows when live video is being viewed
-Session refresh timing	Large spike during stream	Observer can estimate viewing session length
-Idle periodic tasks	Isolated spikes	Time-sync, cloud beacons, internal tasks
-Potential motion detection (future)	Would show micro-burst clusters	Can reveal activity inside the home
-
- **Key Insight**
+## **Key Insight**
 
 Even with TLS encryption, timing metadata alone leaks private behavioral information.
 
