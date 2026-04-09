@@ -108,7 +108,7 @@ This is significant because VPNs are commonly recommended as a privacy tool. For
 ## Charts
 
 ### Chart 5 — Per-device F1-score: Full vs VPN simulation
-![F1 Comparison](Screenshots/chart5_vpn_f1_comparison.png)
+![F1 Comparison](chart/chart5_vpn_f1_comparison.png)
 
 ### Chart 6 — Overall accuracy drop and surviving feature importance
-![Accuracy Summary](Screenshots/chart6_vpn_accuracy_summary.png)
+![Accuracy Summary](chart/chart6_vpn_accuracy_summary.png)
